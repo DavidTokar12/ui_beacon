@@ -1,0 +1,188 @@
+{
+    "easy": [
+        {
+            "id": "easy-0",
+            "current_page": "drafts",
+            "users_question": "How can I send an email?",
+            "label": "Click on the \"Compose\" button at the top of the left sidebar."
+        },
+        {
+            "id": "easy-1",
+            "current_page": "Inbox",
+            "users_question": "How can I view my starred emails?",
+            "label": "In the sidebar on the left of the screen, lok for the button with the star icon and `Starred` text."
+        },
+        {
+            "id": "easy-2",
+            "current_page": "Inbox",
+            "users_question": "How can I delete an email?",
+            "label": "Hover over the email you want to delete, and click the trash icon that appears at the right side."
+        },
+        {
+            "id": "easy-3",
+            "current_page": "Inbox",
+            "users_question": "How can I archive an email?",
+            "label": "Hover over the email you want to archive, and click the archive icon (a small box with a down arrow) that appears on the right side."
+        },
+        {
+            "id": "easy-4",
+            "current_page": "Trash",
+            "users_question": "How can I move an email out of the trash?",
+            "label": "Click on the email you want to delete to open it. At the top of the page click the \"Move to\" button with the folder icon and select the destination folder."
+        },
+        {
+            "id": "easy-5",
+            "current_page": "Inbox",
+            "users_question": "How can I refresh my email list?",
+            "label": "Click the refresh icon button at the top of your inbox page."
+        },
+        {
+            "id": "easy-6",
+            "current_page": "Spam",
+            "users_question": "How can I check my spam folder?",
+            "label": "You're already on the Spam page. Here you can view all the emails marked as spam."
+        },
+        {
+            "id": "easy-7",
+            "current_page": "Starred",
+            "users_question": "How can I send an email from here?",
+            "label": "Click on the \"Compose\" button at the top of the left sidebar."
+        },
+        {
+            "id": "easy-8",
+            "current_page": "Sent",
+            "users_question": "How can I see my draft emails?",
+            "label": "At the middle of the left sidebar click on \"Drafts.\""
+        },
+        {
+            "id": "easy-9",
+            "current_page": "Categories",
+            "users_question": "How do I return to the inbox?",
+            "label": "Click on the \"Inbox\" option at the top of the left sidebar."
+        },
+        {
+            "id": "easy-10",
+            "current_page": "LabelSettings",
+            "users_question": "How can I create a new label?",
+            "label": ""
+        },
+        {
+            "id": "easy-11",
+            "current_page": "InboxSettings",
+            "users_question": "How do I hide the 'Promotions' tab from my inbox?",
+            "label": ""
+        },
+        {
+            "id": "easy-12",
+            "current_page": "LabelSettings",
+            "users_question": "How can I hide the Trash label from my label list?",
+            "label": ""
+        },
+        {
+            "id": "easy-13",
+            "current_page": "Inbox",
+            "users_question": "My inbox is too cluttered. How do I quickly unselect all emails?",
+            "label": ""
+        }
+    ],
+    "medium": [
+        {
+            "id": "medium-0",
+            "current_page": "Inbox",
+            "users_question": "I wrote a long email, but forgot to send it. I closed my window. Do I have to rewrite the whole email again?",
+            "label": ""
+        },
+        {
+            "id": "medium-1",
+            "current_page": "Inbox",
+            "users_question": "I want to filter all emails from 'mybank.com' into a 'Bank' label. How do I do that?",
+            "label": ""
+        },
+        {
+            "id": "medium-2",
+            "current_page": "GeneralSettings",
+            "users_question": "I accidentally deleted an important email. How do I restore it?",
+            "label": ""
+        },
+        {
+            "id": "medium-3",
+            "current_page": "Starred",
+            "users_question": "How do I remove the star from multiple emails at once?",
+            "label": ""
+        },
+        {
+            "id": "medium-4",
+            "current_page": "LabelSettings",
+            "users_question": "How do I finalize and send a draft from here?",
+            "label": ""
+        },
+        {
+            "id": "medium-5",
+            "current_page": "Spam",
+            "users_question": "I found a valid email in Spam by mistake. How do I mark it as not spam?",
+            "label": ""
+        }
+    ],
+    "hard": [
+        {
+            "id": "hard-0",
+            "current_page": "FiltersBlockedAddressesSettings",
+            "users_question": "How do I block all emails containing the word 'Bitcoin'?",
+            "label": ""
+        },
+        {
+            "id": "hard-1",
+            "current_page": "ForwardingPopImapSettings",
+            "users_question": "I only want to forward emails from my boss to an external address. How can I set this up?",
+            "label": ""
+        },
+        {
+            "id": "hard-2",
+            "current_page": "labelSettings",
+            "users_question": "I want to create a label that only appears when there are unread emails. How do I do that?",
+            "label": ""
+        },
+        {
+            "id": "hard-3",
+            "current_page": "AccountsImportSettings",
+            "users_question": "I'd like to send emails from a different address within Gmail. How do I set that up?",
+            "label": ""
+        },
+        {
+            "id": "hard-4",
+            "current_page": "GeneralSettings",
+            "users_question": "How can I enable advanced input tools for different languages and also turn on right-to-left editing support?",
+            "label": ""
+        },
+        {
+            "id": "hard-5",
+            "current_page": "InboxSettings",
+            "users_question": "How can I show only unread emails first and hide all categories except 'Social'?",
+            "label": ""
+        },
+        {
+            "id": "hard-6",
+            "current_page": "FiltersBlockedAddressesSettings",
+            "users_question": "How do I export my existing filters so I can share them with a coworker?",
+            "label": ""
+        },
+        {
+            "id": "hard-7",
+            "current_page": "InboxSettings",
+            "users_question": "How do I enable bundling of top promo emails in Promotions while also turning off the reading pane?",
+            "label": ""
+        },
+        {
+            "id": "hard-8",
+            "current_page": "GeneralSettings",
+            "users_question": "How can I set an automatic vacation response and also hide snippets in my inbox?",
+            "label": ""
+        },
+        {
+            "id": "hard-9",
+            "current_page": "ForwardingPopImapSettings",
+            "users_question": "I want to enable POP for all mail, keep a copy in Gmail, and mark them as read automatically. How do I do that?",
+            "label": ""
+        }
+    ]
+}

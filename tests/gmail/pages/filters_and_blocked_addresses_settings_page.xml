@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<Page id="FiltersBlockedAddressesSettings"
+    name="Filters and Blocked Addresses"
+    description="Manage your inbound mail filters, blocked senders, and spam-related settings.">
+
+    <Section title="Filters applied to incoming mail">
+        <List description="All filters that apply to incoming email">
+            <ListItem>
+                <CheckBox action="Select or deselect this filter for bulk operations" />
+                <Text value="Matches: from:google" />
+                <Text value="Do this: Delete it" />
+                <Link value="edit" to="EditSelectedFilterPage" />
+                <Link value="delete" to="DeleteSelectedFilterPage" />
+            </ListItem>
+        </List>
+
+        <Wrapper name="bulk filter actions">
+            <Link value="Select All" to="SelectAllFilters" />
+            <Link value="None" to="SelectNoneFilters" />
+            <Button text="Export" action="Exports any selected filters" />
+            <Button text="Delete" action="Deletes any selected filters" />
+        </Wrapper>
+
+        <Wrapper name="filter creation and import">
+            <Link value="Create a new filter" to="CreateFilterPage" />
+            <Link value="Import filters" to="ImportFiltersPage" />
+        </Wrapper>
+    </Section>
+
+    <Section title="Blocked addresses">
+        <Text value="Messages from these senders will appear in Spam." />
+        <List description="A list of blocked senders">
+            <ListItem>
+                <CheckBox action="Select or deselect this blocked address for bulk operations" />
+                <Text value="Name and email of blocked address." />
+                <Link value="unblock" to="UnblockSelectedAddressPage" />
+            </ListItem>
+        </List>
+    </Section>
+</Page>

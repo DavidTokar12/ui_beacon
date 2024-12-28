@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<Page name="AllSettings"
+    description="Categorized emails. Same structure as Inbox.">
+    <Nav description="Mailbox navigation">
+        <NavItem
+            to="GeneralSettings"
+            text="General"
+            action="Navigates to general settings"
+        />
+        <NavItem
+            to="LabelSettings"
+            text="Labels"
+            action="Navigates to label management"
+        />
+        <NavItem
+            to="InboxSettings"
+            text="Inbox"
+            action="Navigates to inbox configuration"
+        />
+        <NavItem
+            to="AccountsImportSettings"
+            text="Accounts and Import"
+            action="Navigates to account and import settings"
+        />
+        <NavItem
+            to="FiltersBlockedAddressesSettings"
+            text="Filters and Blocked Addresses"
+            action="Navigates to filter and blocked address settings"
+        />
+        <NavItem
+            to="ForwardingPopImapSettings"
+            text="Forwarding and POP/IMAP"
+            action="Navigates to email forwarding and POP/IMAP settings"
+        />
+        <NavItem
+            to="AddonsSettings"
+            text="Add-ons"
+            action="Navigates to add-ons management"
+        />
+        <NavItem
+            to="ChatMeetSettings"
+            text="Chat and Meet"
+            action="Navigates to chat and meet settings"
+        />
+        <NavItem
+            to="AdvancedSettings"
+            text="Advanced"
+            action="Navigates to advanced email settings"
+        />
+        <NavItem
+            to="OfflineSettings"
+            text="Offline"
+            action="Navigates to offline settings"
+        />
+        <NavItem
+            to="ThemeSettings"
+            text="Themes"
+            action="Navigates to theme selection"
+        />
+    </Nav>
+</Page>

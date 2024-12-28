@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Page name="LabelSettings"
+    description="Manage system labels, categories, and user-created labels.">
+
+    <Section title="System labels">
+        <List description="System labels and their display options">
+            <ListItem>
+                <Text value="Inbox" />
+                <Button text="show" action="Shows the Inbox label in label list" />
+                <Button text="hide" action="Hides the Inbox label in label list" />
+            </ListItem>
+            <ListItem>
+                <Text value="Starred" />
+                <Button text="show" action="Shows the Starred label in label list" />
+                <Button text="hide" action="Hides the Starred label in label list" />
+            </ListItem>
+            <ListItem>
+                <Text value="Snoozed" />
+                <Button text="show" />
+                <Button text="hide" />
+                <Button text="show if unread" />
+            </ListItem>
+            <ListItem>
+                <Text value="Important" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Chats" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Sent" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Scheduled" />
+                <Button text="show" />
+                <Button text="hide" />
+                <Button text="show if unread" />
+            </ListItem>
+            <ListItem>
+                <Text value="Drafts" />
+                <Button text="show" />
+                <Button text="hide" />
+                <Button text="show if unread" />
+            </ListItem>
+            <ListItem>
+                <Text value="All Mail" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Spam" />
+                <Button text="show" />
+                <Button text="hide" />
+                <Button text="show if unread" />
+            </ListItem>
+            <ListItem>
+                <Text value="Trash" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+        </List>
+    </Section>
+
+    <Section title="Categories">
+        <Text
+            value="System-defined categories and how they appear in the label list or message list." />
+        <List description="Category labels">
+            <ListItem>
+                <Text value="Categories" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Social" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Updates" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Forums" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+            <ListItem>
+                <Text value="Promotions" />
+                <Button text="show" />
+                <Button text="hide" />
+            </ListItem>
+        </List>
+    </Section>
+
+    <Section title="Labels">
+        <Button text="Create new label" action="Opens a dialog to create a new custom label" />
+
+        <List description="User-created labels with editing options">
+            <ListItem>
+                <Text value="Label name" />
+                <Button text="show" />
+                <Button text="hide" />
+                <Button text="show if unread" />
+                <Button text="remove" />
+                <Button text="edit" />
+            </ListItem>
+        </List>
+
+        <Text value="Note: Removing a label will not remove the messages with that label." />
+    </Section>
+</Page>

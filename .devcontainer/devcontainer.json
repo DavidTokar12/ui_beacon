@@ -1,0 +1,26 @@
+{
+    "name": "uibeacon-poetry-pyenv",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "charliermarsh.ruff",
+                "ms-python.black-formatter",
+                "streetsidesoftware.code-spell-checker",
+                "ms-azuretools.vscode-docker",
+                "svelte.svelte-vscode"
+            ],
+            "settings": {
+                "python.locator": "js"
+            }
+        }
+    },
+    "remoteUser": "root",
+    "mounts": [
+        "type=bind,source=/${localEnv:HOME}/.ssh,target=/root/.ssh,readonly"
+    ]
+}

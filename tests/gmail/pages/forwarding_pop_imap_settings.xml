@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<Page
+    id="ForwardingPopImapSettings"
+    name="Forwarding and POP/IMAP"
+    description="Configure your mail forwarding, POP, and IMAP settings."
+>
+
+    <Section title="Forwarding">
+        <Link value="Learn more" to="ForwardingLearnMorePage" />
+        <Button text="Add a forwarding address"
+            action="Opens a dialog to add a forwarding address" />
+
+        <Text value="Tip: You can also forward only some of your mail by" />
+        <Link value="creating a filter" to="CreateFilterPage" />
+    </Section>
+
+    <Section title="POP download">
+        <Link value="Learn more" to="PopDownloadLearnMorePage" />
+
+        <Text value="Status: POP is disabled" />
+
+        <RadioGroup text="POP settings">
+            <Option text="Enable POP for all mail" />
+            <Option text="Enable POP for mail that arrives from now on" />
+            <Option text="Disable POP" />
+        </RadioGroup>
+
+        <Select
+            text="When messages are accessed with POP"
+            action="Determines how Gmail manages copies of messages accessed via POP."
+        >
+            <Option text="Keep Gmail's copy in the Inbox" />
+            <Option text="Mark Gmail's copy as read" />
+            <Option text="Archive Gmail's copy" />
+            <Option text="Delete Gmail's copy" />
+        </Select>
+
+        <Text value="Configure your email client (e.g. Outlook, Eudora, Netscape Mail)" />
+        <Link value="Configuration instructions" to="PopConfigurationInstructions" />
+    </Section>
+
+    <Section title="IMAP access">
+        <Text value="Access Gmail from other clients using IMAP." />
+        <Link value="Learn more" to="ImapLearnMorePage" />
+
+        <Text value="Status: IMAP is disabled" />
+
+        <RadioGroup text="IMAP settings">
+            <Option text="Enable IMAP" />
+            <Option text="Disable IMAP" />
+        </RadioGroup>
+
+        <Text value="Configure your email client (e.g. Outlook, Thunderbird, iPhone)" />
+        <Link value="Configuration instructions" to="ImapConfigurationInstructions" />
+    </Section>
+
+    <Button text="Save Changes" />
+    <Button text="Cancel" />
+</Page>

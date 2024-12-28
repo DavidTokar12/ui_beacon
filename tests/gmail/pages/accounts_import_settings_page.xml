@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<Page id="AccountsImportSettings" name="Accounts and Import"
+    description="Manage your account credentials, mail import, send-as addresses, and mail delegation.">
+
+    <Section title="Change account settings">
+        <Link value="Change password" to="ChangePasswordPage" />
+        <Link value="Change password recovery options" to="ChangePasswordRecoveryPage" />
+        <Link value="Other Google Account settings" to="GoogleAccountSettingsPage" />
+        <Text
+            value="Using Gmail for work? Businesses get customized email with Google Workspace." />
+    </Section>
+
+    <Section title="Import mail and contacts">
+        <Link value="Learn more" to="ImportMailLearnMorePage" />
+        <Link value="Import mail and contacts" to="ImportMailAndContactsPage" />
+    </Section>
+
+    <Section title="Send mail as">
+        <Text value="Use Gmail to send from your other email addresses." />
+        <Text value="users email address" />
+        <Button text="Add another email address"
+            action="Opens a dialog to add a secondary email address" />
+        <Link value="Learn more" to="SendMailAsLearnMorePage" />
+    </Section>
+
+    <Section title="Check mail from other accounts">
+        <Link value="Learn more" to="CheckMailLearnMorePage" />
+        <Button text="Add a mail account"
+            action="Brings up wizard to check mail from another account" />
+    </Section>
+
+    <Section title="Grant access to your account">
+        <Link value="Learn more" to="GrantAccessLearnMorePage" />
+        <Button text="Add another account"
+            action="Adds a delegated user to read/send mail on your behalf" />
+
+        <RadioGroup text="Mark as read behavior">
+            <Option text="Mark conversation as read when opened by others" />
+            <Option text="Leave conversation unread when opened by others" />
+        </RadioGroup>
+
+        <RadioGroup text="Sender information">
+            <Option text="Show this address and the person who sent it (Sent by...)" />
+            <Option text="Show this address only (1413david@gmail.com)" />
+        </RadioGroup>
+    </Section>
+
+    <Section title="Add additional storage">
+        <Text value="You are currently using 17.67 GB (17%) of your 100 GB." />
+        <Text value="Need more space?" />
+        <Button text="Purchase additional storage" action="Takes you to a storage purchase page" />
+    </Section>
+
+</Page>

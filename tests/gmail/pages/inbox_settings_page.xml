@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<Page id="InboxSettings" name="Inbox"
+    description="Configure inbox layout, categories, reading pane, and importance markers.">
+    <Section title="Inbox type">
+        <Select text="Select inbox type" action="Changes the primary inbox layout.">
+            <Option text="Default" />
+            <Option text="Important first" />
+            <Option text="Unread first" />
+            <Option text="Starred first" />
+            <Option text="Priority Inbox" />
+            <Option text="Multiple Inboxes" />
+        </Select>
+    </Section>
+
+    <Section title="Categories">
+        <Link value="Learn more" to="InboxCategoriesLearnMorePage" />
+        <CheckBox text="Primary" action="Displays Primary tab in the inbox" />
+        <CheckBox text="Promotions" action="Displays Promotions tab in the inbox" />
+        <CheckBox text="Social" action="Displays Social tab in the inbox" />
+        <CheckBox text="Updates" action="Displays Updates tab in the inbox" />
+        <CheckBox text="Forums" action="Displays Forums tab in the inbox" />
+
+        <CheckBox text="Include starred in Primary"
+            action="Includes Starred messages in the Primary tab" />
+        <CheckBox text="Enable bundling of top promo emails in Promotions"
+            action="Bundles top promotional emails under the Promotions tab" />
+        <Text value="Deselect all categories to go back to your old inbox." />
+    </Section>
+
+    <Section title="Reading pane">
+        <CheckBox text="Enable reading pane"
+            action="Adds a reading pane next to or below your inbox" />
+        <RadioGroup text="Reading pane position">
+            <Option text="No split" />
+            <Option text="Right of inbox" />
+            <Option text="Below inbox" />
+        </RadioGroup>
+    </Section>
+
+    <Section title="Importance markers">
+        <RadioGroup text="Marker display">
+            <Option text="Show markers (⚫) by messages marked as important" />
+            <Option text="No markers" />
+        </RadioGroup>
+
+        <Text value="Gmail analyzes your new incoming messages to predict what's important." />
+
+        <RadioGroup text="Marker usage">
+            <Option text="Use my past actions to predict which messages are important to me" />
+            <Option text="Don't use my past actions to predict which messages are important" />
+        </RadioGroup>
+    </Section>
+
+    <Section title="Filtered mail">
+        <RadioGroup text="Filtered mail settings">
+            <Option
+                text="Override filters — Include important messages in the inbox that may have been filtered out" />
+            <Option text="Don't override filters" />
+        </RadioGroup>
+    </Section>
+
+    <Button text="Save Changes" />
+    <Button text="Cancel" />
+</Page>
