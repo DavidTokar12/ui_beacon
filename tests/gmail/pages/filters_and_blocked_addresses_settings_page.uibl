@@ -1,0 +1,181 @@
+<Page
+    name="FiltersBlockedAddressesSettings"
+    description="Manage your inbound mail filters, blocked senders, and spam-related settings."
+>
+
+    <Section label="The following filters are applied to all incoming mail:">
+
+        <List description="All filters that apply to incoming email">
+            <ListItem>
+                <CheckBox action="Select or deselect this filter for bulk operations" />
+                <Text value="Matches: pattern that matches the mail e.g: from: google" />
+                <Text value="Do this: What the filter does to the matched email, e.g: Delete it" />
+                <Button label="edit" action="Opens EditOrCreateFilterForm" />
+                <Button label="delete" action="Deletes the filter" />
+            </ListItem>
+        </List>
+
+        <Section label="" description="bulk filter actions">
+            <Button label="Select All" />
+            <Button label="Select None" />
+            <Button label="Export" action="Exports any selected filters" visibleWhen="At least one filter is selected" />
+            <Button label="Delete" action="Deletes any selected filters" visibleWhen="At least one filter is selected" />
+        </Section>
+
+        <Wrapper orientation="horizontal">
+            <Link label="Create a new filter" to="CreateFilterPage" />
+            <Button label="Import filters" action="Makes import filter section visible." />
+        </Wrapper>
+
+        <Section label="" visibleWhen="Import filters button is pressed.">
+            <Text value="Import Filters: First, choose the file containing filters, then click the 'Open file' button."/>
+            <Button label="Choose file"/>
+            <Button label="Open file" visibleWhen="File is chosen."/>
+        </Section>
+
+
+    </Section>
+
+    <Section label="The following email addresses are blocked. Messages from these addresses will appear in Spam:">
+        <List description="A list of blocked senders">
+            <ListItem>
+                <CheckBox action="Select or deselect this blocked address for bulk operations" />
+                <Text value="Name and email of blocked address." />
+                <Button label="unblock" />
+            </ListItem>
+        </List>
+    </Section>
+
+    <Form
+        name="EditOrCreateFilterForm"
+        description="Set the conditions to match incoming mail."
+    >
+        <TextInput
+            label="From"
+        />
+        <TextInput
+            label="To"
+        />
+        <TextInput
+            label="Subject"
+        />
+        <TextInput
+            label="Has the words"
+        />
+        <TextInput
+            label="Doesn't have"
+        />
+
+        <DropDown
+            description="Filters results by message size"
+        >
+            <Option
+                value="greater than"
+            />
+            <Option
+                value="less than"
+            />
+        </DropDown>
+
+        <TextInput
+            label="Size"
+        />
+
+        <DropDown
+            description="Select Size Unit"
+        >
+            <Option
+                value="MB"
+            />
+            <Option
+                value="KB"
+            />
+            <Option
+                value="Bytes"
+            />
+        </DropDown>
+
+        <CheckBox
+            label="Has attachment"
+        />
+        <CheckBox
+            label="Don’t include Chats"
+        />
+
+        <Button
+            label="Create Filter"
+            action="Opens FilterActionsForm"
+        />
+    </Form>
+
+    <Form
+        name="FilterActionsForm"
+        description="Choose what to do with messages that match the above criteria."
+    >
+        <CheckBox
+            label="Skip the Inbox (Archive it)"
+        />
+        <CheckBox
+            label="Mark as read"
+        />
+        <CheckBox
+            label="Star it"
+        />
+
+        <Wrapper orientation="horizontal">
+            <CheckBox
+                name="applyLabel"
+                label="Apply the label:"
+            />
+            <DropDown>
+                <Option value="Choose label..." />
+                <Option value="New label..." />
+                <Option value="IMAP/Drafts" />
+                <Option value="Unwanted" />
+            </DropDown>
+        </Wrapper>
+
+        <Wrapper orientation="horizontal">
+            <CheckBox
+                name="forwardIt"
+                label="Forward it"
+            />
+            <Nav
+                label="Add forwarding address"
+                to="ForwardingPopImapSettings"
+            />
+        </Wrapper>
+
+        <CheckBox
+            label="Delete it"
+        />
+        <CheckBox
+            label="Never send it to Spam"
+        />
+        <CheckBox
+            label="Always mark it as important"
+        />
+        <CheckBox
+            label="Never mark it as important"
+        />
+
+        <Wrapper orientation="horizontal">
+            <CheckBox
+                label="Categorize as:"
+            />
+            <DropDown
+                label="Choose category..."
+            >
+                <Option value="Primary" />
+                <Option value="Social" />
+                <Option value="Promotions" />
+                <Option value="Updates" />
+            </DropDown>
+        </Wrapper>
+
+        <Button
+            label="Create Filter"
+            action="CreateOrUpdateFilter"
+        />
+    </Form>
+</Page>

@@ -1,0 +1,34 @@
+<Page name="Inbox" description="Primary mailbox with new incoming messages">
+
+    <DropDown action="Mass select or unselect emails">
+        <Option value="All" />
+        <Option value="None" />
+        <Option value="Read" />
+        <Option value="Unread" />
+        <Option value="Starred" />
+        <Option value="Unstarred" />
+    </DropDown>
+
+    <Button icon="Refresh icon" action="Refreshes the inbox" />
+
+    <List description="Email previews in the inbox">          
+            <ListItem>
+                <Nav to="ViewEmailPage" description="clicking the row will open the email">
+                    <CheckBox action="Select or deselect this email for group actions" />
+                    <CheckBox icon="Star icon" action="Stars or unstars the email" />
+                    <CheckBox action="Marks or unmarks the email as important" />
+
+                    <Text value="Sender name / Subject / snippet / date/time" />
+
+                    <Button action="Archives the email" icon="Archive icon"
+                        visibleWhen="The list item is hovered on." />
+                    <Button action="Deletes the email" icon="Trash icon"
+                        visibleWhen="The list item is hovered on." />
+                    <Button action="Marks email as unread" icon="Envelope icon"
+                        visibleWhen="The list item is hovered on." />
+                    <Button action="Snoozes the email" icon="Clock icon"
+                        visibleWhen="The list item is hovered on." />
+                </Nav>
+            </ListItem>
+    </List>
+</Page>

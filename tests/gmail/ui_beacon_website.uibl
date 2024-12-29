@@ -1,0 +1,229 @@
+<Website name="Gmail">
+
+    <Header description="Global header, always visible" position="top of the screen">
+        
+        <TextInput
+            action="When a user types a query and presses Enter, the displayed email list filters to matching emails."
+            placeholder="Search mail"
+        />
+        <Button
+            action="Shows AdvancedSearchOptions form"
+            icon="Filter icon"
+        />
+        <Form name="AdvancedSearchOptions" visibleWhen="The above button with the filter icon get's pressed">
+
+            <TextInput placeholder="From" />
+            <TextInput placeholder="To" />
+            <TextInput placeholder="Subject" />
+            <TextInput placeholder="Has the words" />
+            <TextInput placeholder="Doesn't have" />
+
+            <Wrapper orientation="horizontal" description="Filters results by message size">
+                <DropDown>
+                    <Option value="greater than" />
+                    <Option value="less than" />
+                </DropDown>
+
+                <TextInput action="Define the filter size" />
+
+                <DropDown action="Select the filter size units">
+                    <Option value="MB" />
+                    <Option value="Kb" />
+                    <Option value="Bytes" />
+                </DropDown>
+            </Wrapper>
+
+            <Wrapper orientation="horizontal">
+                <DropDown label="Date Within">
+                    <Option value="1 day" />
+                    <Option value="1 week" />
+                    <Option value="1 month" />
+                </DropDown>
+                <DateSelector />
+            </Wrapper>
+
+            <DropDown label="Search">
+                <Option value="All Mail" />
+                <Option value="Inbox" />
+                <Option value="Starred" />
+                <Option value="Sent Mail" />
+                <Option value="Drafts" />
+                <Option value="Chats" />
+                <Option value="Spam" />
+                <Option value="Trash" />
+                <Option value="Mail & Spam & Trash" />
+                <Option value="Read Mail" />
+                <Option value="Unread Mail" />
+                <Option value="Social" />
+                <Option value="Updates" />
+                <Option value="Forums" />
+                <Option value="Promotions" />
+            </DropDown>
+
+            <Wrapper orientation="horizontal">
+                <CheckBox label="Has attachment"/>
+                <CheckBox label="Don't include chats" />
+            </Wrapper>
+
+            <Button label="Search" action="Search with advanced filters" />
+            <Button label="Create filter" action="Create filter from these rules" />
+
+        </Form>
+
+        <DropDown icon="Question mark" action="Open support options">
+            <Option action="Opens link to help page with FAQ" value="Help" />
+            <Option action="Opens link to a gmail training program offered by google"
+                value="Training" />
+            <Option action="Opens link to updates in chronological order" value="Updates" />
+            <Option
+                action="Opens `Send feedback to Google link` where users can report an issue or suggest an idea."
+                value="Send feedback to Google" />
+        </DropDown>
+
+
+        <Button icon="Settings icon" action="Opens setting options" />
+
+        <Wrapper name="setting options" visibleWhen="Settings button is clicked">
+            <Nav label="See all settings" to="AllSettings" />
+
+            <RadioGroup action="Selects the `density` of how to display the email list." label="Density">
+                <Option value="Default" />
+                <Option value="Comfortable" />
+                <Option value="Compact" />
+            </RadioGroup>
+            
+            <Wrapper orientation="horizontal">
+                <RadioGroup action="Selects the theme of the website from a list of predefined themes."
+                    label="Theme">
+                </RadioGroup>
+                <Nav label="View all" to="ThemePickerPage" />
+            </Wrapper>
+
+            <RadioGroup action="Determines the order in which emails are displayed in the inbox."
+                label="Inbox type">
+                <Option value="Default"/>
+                <Nav label="Customize" to="DefaultInboxCustomization" />                     
+                <Option value="Important first" />
+                <Option value="Unread first" />
+                <Option value="Starred first" />
+                <Option value="Priority Inbox"/>
+                <Nav label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Priority inbox'"/>
+                <Option value="Multiple Inboxes"/>
+                <Nav label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Multiple Inboxes'" />
+            </RadioGroup>
+
+            <RadioGroup visibleWhen="Inbox type is not 'Multiple inboxes'" action="Configures the reading pane to change the layout of email previews."
+                label="Reading pane">
+                <Option value="No split" />
+                <Option value="Right of inbox" />
+                <Option value="Below inbox" />
+            </RadioGroup>
+
+            <CheckBox label="Email threading - Conversation view" description="Groups emails of the same topic together." />
+        </Wrapper>
+
+    </Header>
+
+    <SideBar position="left of the screen" description="Global sidebar, always visible">
+        <Button
+            action="Opens a compose window"
+            icon="Pencil icon"
+            label="Compose"
+        />
+            <Nav
+                to="Inbox"
+                icon="Inbox icon"
+                label="Inbox"
+            />
+            <Nav
+                to="Starred"
+                icon="Star icon"
+                label="Starred"
+            />
+            <Nav
+                to="Snoozed"
+                icon="Clock icon"
+                label="Snoozed"
+            />
+            <Nav
+                to="Sent"
+                icon="Outgoing arrow icon"
+                label="Sent"
+            />
+            <Nav
+                to="Drafts"
+                icon="Draft icon"
+                label="Drafts"
+            />
+            <Nav
+                to="Important"
+                icon="Exclamation icon"
+                label="Important"
+            />
+            <Nav
+                to="AllMail"
+                icon="Envelope icon"
+                label="All Mail"
+            />
+            <Nav
+                to="Spam"
+                icon="Warning icon"
+                label="Spam"
+            />
+            <Nav
+                to="Trash"
+                icon="Trash bin icon"
+                label="Trash"
+            />
+            <Nav
+                to="Categories"
+                icon="Folder icon"
+                label="Categories"
+            />
+            <Nav
+                to="ManageLabels"
+                icon="Settings icon"
+                label="Manage labels"
+            />
+            <Nav
+                to="CreateNewLabel"
+                icon="Plus icon"
+                label="Create new label"
+            />
+            <List
+                description="Labels created by the user. Clicking a label shows all emails with that label." />
+    </SideBar>
+
+    <Page name="Drafts" description="Unsent emails. Same structure as Inbox." />
+
+    <Page name="Starred" description="Starred messages. Same structure as Inbox." />
+
+    <Page name="Snoozed" description="Snoozed messages. Same structure as Inbox." />
+
+    <Page name="Sent" description="Outgoing messages. Same structure as Inbox." />
+
+    <Page name="Important" description="Important messages. Same structure as Inbox." />
+
+    <Page name="ThemePickerPage" description="A page where the user can select from a set of predefined themes or choose their own photos from the cloud to convert into a theme." />
+
+    <Page name="AllMail"
+        description="All emails, including archived. Same structure as Inbox." />
+
+    <Page name="Spam" description="Spam folder. Same structure as Inbox." />
+
+    <Page name="Trash" description="Deleted messages. Same structure as Inbox." />
+
+    <Page name="Categories"
+        description="Categorized emails. Same structure as Inbox." />
+
+    <IncludePage href="pages/inbox_page.uibl" />
+    <IncludePage href="pages/general_settings_page.uibl" />
+    <IncludePage href="pages/all_settings_page.uibl" />
+    <IncludePage href="pages/label_settings_page.uibl" />
+    <IncludePage href="pages/inbox_settings_page.uibl" />
+    <IncludePage href="pages/accounts_import_settings_page.uibl" />
+    <IncludePage href="pages/filters_and_blocked_addresses_settings_page.uibl" />
+    <IncludePage href="pages/forwarding_pop_imap_settings_page.uibl" />
+    <IncludePage href="pages/view_email_page.uibl" />
+
+</Website>

@@ -16,8 +16,7 @@ from ui_beacon import create_system_prompts
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(
-        description="Run AI tests for different suites.")
+    parser = argparse.ArgumentParser(description="Run AI tests for different suites.")
     parser.add_argument(
         "suite", type=str, help="Test suite to run (e.g., gmail, outlook)."
     )
@@ -84,9 +83,7 @@ def process_test_case(
             "plan": plan_result,
         }
     except Exception as e:
-        logging.error(
-            f"Error processing case {test_case.get('id')}: {e!s}"
-        )
+        logging.error(f"Error processing case {test_case.get('id')}: {e!s}")
 
 
 def run_tests(suite: str, model: str, difficulty: str | None, ids: list[str] | None):
@@ -108,8 +105,7 @@ def run_tests(suite: str, model: str, difficulty: str | None, ids: list[str] | N
     ui_beacon_code_path = Path(__file__).parent / suite / "ui_beacon_code.xml"
 
     try:
-        prompts = create_system_prompts(
-            ui_beacon_code_path=ui_beacon_code_path)
+        prompts = create_system_prompts(ui_beacon_code_path=ui_beacon_code_path)
         planer_system_prompt = prompts["planner_prompt"]
         plan_to_response_converter_prompt = prompts["plan_to_response_converter_prompt"]
 

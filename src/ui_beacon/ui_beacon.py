@@ -44,15 +44,15 @@ def create_system_prompts(ui_beacon_code_path: str | Path) -> str:
         validate_ui_beacon_lang_code(ui_beacon_code)
 
         planner_prompt_schema: str = read_prompt_schema("planner_system.md")
-        planner_prompt = planner_prompt_schema.format(
-            ui_beacon_code=ui_beacon_code)
+        planner_prompt = planner_prompt_schema.format(ui_beacon_code=ui_beacon_code)
 
         plan_to_response_converter_prompt: str = read_prompt_schema(
-            "plan_to_response_converter_system.md")
+            "plan_to_response_converter_system.md"
+        )
 
         return {
             "planner_prompt": planner_prompt,
-            "plan_to_response_converter_prompt": plan_to_response_converter_prompt
+            "plan_to_response_converter_prompt": plan_to_response_converter_prompt,
         }
     except Exception as e:
         raise Exception(f"Error creating system prompt schema: {e}")

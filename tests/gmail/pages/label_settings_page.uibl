@@ -1,0 +1,110 @@
+<Page name="LabelSettings"
+    description="Manage system labels, categories, and user-created labels.">
+
+    <Section label="System labels">
+            <Wrapper orientation="horizontal">
+                <Text value="Inbox" />
+                <Button label="show" action="Shows the Inbox label in label list" />
+                <Button label="hide" action="Hides the Inbox label in label list" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Starred" />
+                <Button label="show" action="Shows the Starred label in label list" />
+                <Button label="hide" action="Hides the Starred label in label list" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Snoozed" />
+                <Button label="show" />
+                <Button label="hide" />
+                <Button label="show if unread" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Important" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Chats" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Sent" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Scheduled" />
+                <Button label="show" />
+                <Button label="hide" />
+                <Button label="show if unread" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Drafts" />
+                <Button label="show" />
+                <Button label="hide" />
+                <Button label="show if unread" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="All Mail" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Spam" />
+                <Button label="show" />
+                <Button label="hide" />
+                <Button label="show if unread" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Trash" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+    </Section>
+
+    <Section label="Categories">
+            <Wrapper orientation="horizontal">
+                <Text value="Categories" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Social" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Updates" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Forums" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+            <Wrapper orientation="horizontal">
+                <Text value="Promotions" />
+                <Button label="show" />
+                <Button label="hide" />
+            </Wrapper>
+    </Section>
+
+    <Section label="Labels">
+        <Button label="Create new label" action="Opens a dialog to create a new custom label" />
+
+        <List description="User-created labels with editing options">
+            <ListItem>
+                <Text value="Label name" />
+                <Button label="show" />
+                <Button label="hide" />
+                <Button label="show if unread" />
+                <Button label="remove" />
+                <Button label="edit" />
+            </ListItem>
+        </List>
+
+        <Text value="Note: Removing a label will not remove the messages with that label." />
+    </Section>
+</Page>

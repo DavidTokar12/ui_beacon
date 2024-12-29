@@ -1,0 +1,64 @@
+<Page name="InboxSettings" description="Configure inbox layout, categories, reading pane, and importance markers.">
+
+    <Section label="Inbox type">
+        <DropDown label="Select inbox type" action="Changes the inbox layout.">
+            <Option value="Default" />
+            <Option value="Important first" />
+            <Option value="Unread first" />
+            <Option value="Starred first" />
+            <Option value="Priority Inbox" />
+            <Option value="Multiple Inboxes" />
+        </DropDown>
+    </Section>
+
+    <Section label="Categories">
+        <Link label="Learn more" to="https://support.google.com/mail/answer/3094499?hl=en&visit_id=638710164102188009-3841426099&p=inboxtabs&rd=2" />
+        <CheckBox label="Primary" action="Displays Primary tab in the inbox" />
+        <CheckBox label="Promotions" action="Displays Promotions tab in the inbox" />
+        <CheckBox label="Social" action="Displays Social tab in the inbox" />
+        <CheckBox label="Updates" action="Displays Updates tab in the inbox" />
+        <CheckBox label="Forums" action="Displays Forums tab in the inbox" />
+        <CheckBox label="Include starred in Primary"
+            action="Includes Starred messages in the Primary tab" />
+        <CheckBox label="Enable bundling of top promo emails in Promotions"
+            action="Bundles top promotional emails under the Promotions tab" />
+        <Text value="Choose which message categories to show as inbox tabs. Other messages will appear in the Primary tab." />
+        <Text value="Deselect all categories to go back to your old inbox." />
+    </Section>
+
+    <Section label="Reading pane">
+        <CheckBox label="Enable reading pane." description="Provides a way to read mail right next to your list of conversations, making mail reading and writing mail faster and adding more context" />
+        <RadioGroup visibleWhen="Enable reading pane check box is checked." label="Reading pane position">
+            <Option value="No split" />
+            <Option value="Right of inbox" />
+            <Option value="Below inbox" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Importance markers">
+        <RadioGroup label="Show a marker by messages marked as important">
+            <Option value="Show markers" />
+            <Option value="No markers" />
+        </RadioGroup>
+
+        <Text value="Gmail analyzes your new incoming messages to predict what's important, considering things like how you've treated similar messages in the past, how directly the message is addressed to you, and many other factors." />
+        <Link label="Learn more" to="https://support.google.com/mail/answer/186543?hl=en&visit_id=638710164104635718-1993819909&p=inboxstyles&rd=1" />
+        
+        <RadioGroup label="">
+            <Option value="Use my past actions to predict which messages are important to me." />
+            <Option value="Don't use my past actions to predict which messages are important." description="Note: this will erase action history and will likely reduce the accuracy of importance predictions." />
+        </RadioGroup>
+
+    </Section>
+
+    <Section label="Filtered mail">
+        <RadioGroup label="">
+            <Option
+                value="Override filters" description="Include important messages in the inbox that may have been filtered out" />
+            <Option value="Don't override filters" />
+        </RadioGroup>
+    </Section>
+
+    <Button label="Save Changes" />
+    <Button label="Cancel" />
+</Page>

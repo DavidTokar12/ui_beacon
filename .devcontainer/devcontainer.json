@@ -12,7 +12,9 @@
                 "ms-python.black-formatter",
                 "streetsidesoftware.code-spell-checker",
                 "ms-azuretools.vscode-docker",
-                "svelte.svelte-vscode"
+                "svelte.svelte-vscode",
+                "redhat.vscode-xml",
+                "yzhang.markdown-all-in-one"
             ],
             "settings": {
                 "python.locator": "js"

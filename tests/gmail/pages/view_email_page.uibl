@@ -1,0 +1,80 @@
+<Page
+    name="ViewEmailPage"
+    description="Displays a single opened email with a vertical toolbar and more actions."
+>
+
+    <Wrapper orientation="horizontal">
+        <Nav
+            label="Back to Inbox"
+            icon="Left arrow icon"
+            to="Inbox"
+        />
+        <Button
+            label="Archive"
+            icon="Archive icon(box with a arrow pointing down)"
+        />
+        <Button
+            label="Report spam"
+            icon="Exclamation icon"
+        />
+        <Button
+            label="Delete"
+            icon="Trash icon"
+        />
+        <Button
+            label="Mark as unread"
+            icon="Envelope icon"
+        />
+        <Button
+            label="Move to"
+            icon="Folder icon with right arrow"
+        />
+
+        <DropDown icon="More icon(three vertical dots)">
+            <Option value="Snooze" />
+            <Option value="Add to Tasks" />
+            <Option value="Create event" />
+            <Option value="Label as..."
+                description="On hover, shows a list of the users' labels with checkboxes to select/unselect them. Under them shows 'Create new' and 'Manage labels' buttons that lead to the Label Settings page" />
+            <Option value="Filter messages like these"
+                action="Opens EditOrCreateFilterForm with prefilled values to match this email" />
+            <Option value="Mute" />
+            <Option value="Switch to advanced/simple toolbar" />
+        </DropDown>
+
+    </Wrapper>
+
+    <Wrapper
+        position="on the right side of the screen, between the header, and the body of the email">
+
+        <Button icon="Printer" label="Print all" />
+        <Button icon="Square with arrow" label="Open in new window" />
+        <Button icon="Start" label="Toggle starred state" />
+
+        <Button icon="" label="Add reaction" />
+        <Button label="Reply" action="Replies to this email" />
+
+        <DropDown icon="More icon" action="Shows more actions"
+            position="Right to the 'Reply' and under the 'In new window' button">
+            <Option value="Forward" />
+            <Option value="Filter messages like this" />
+            <Option value="Delete this message" />
+            <Option value="Block Sender" />
+            <Option value="Report spam" />
+            <Option value="Report phishing" />
+            <Option value="Report illegal content" />
+            <Option value="Show original" />
+            <Option value="Translate message" />
+            <Option value="Download message" />
+            <Option value="Mark as unread" />
+        </DropDown>
+
+    </Wrapper>
+
+    <Text value="Subject of the email" />
+    <Text value="Body of the email" />
+
+    <Button label="Reply" action="Replies to this email" />
+    <Button label="Forward" action="Forward this email" />
+
+</Page>

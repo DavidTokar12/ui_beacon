@@ -1,0 +1,232 @@
+<Page name="GeneralSettings"
+    description="Configure language, email behavior, and personalization options.">
+
+    <Section label="Language">
+        <DropDown label="Gmail display language" action="Selects the display language for Gmail." />
+
+        <Link label="Change language settings for other Google products" to="LanguageSettingsPage" />
+
+        <CheckBox label="Enable input tools"
+            action="Enables various input tools for typing in different languages." />
+
+        <Link label="Edit tools" to="InputToolsPage" />
+
+        <RadioGroup label="Right-to-left editing support">
+            <Option value="Right-to-left editing support off" />
+            <Option value="Right-to-left editing support on" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Phone numbers">
+        <DropDown label="Default country code"
+            action="Selects the default country code for phone numbers." />
+    </Section>
+
+    <Section label="Maximum page size">
+        <DropDown label="Show conversations per page"
+            action="Selects the number of email conversations displayed per page." />
+    </Section>
+
+    <Section label="Undo Send">
+        <DropDown label="Send cancellation period"
+            action="Sets the time period to cancel sending an email." />
+    </Section>
+
+    <Section label="Default reply behavior">
+        <RadioGroup label="Reply options">
+            <Option value="Reply" />
+            <Option value="Reply all" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Hover actions">
+        <RadioGroup label="Hover actions">
+            <Option value="Enable hover actions" />
+            <Option value="Disable hover actions" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Send and Archive">
+        <RadioGroup label="Archive options">
+            <Option value="Show 'Send &amp; Archive' button in reply" />
+            <Option value="Hide 'Send &amp; Archive' button in reply" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Default text style">
+        <TextInput action="Edits the default text style for emails." />
+    </Section>
+
+    <Section label="Images">
+        <RadioGroup label="External images">
+            <Option value="Always display external images" />
+            <Option value="Ask before displaying external images" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Dynamic email">
+        <CheckBox label="Enable dynamic email"
+            action="Enables dynamic email content." />
+        <Link label="Developer settings" to="DynamicEmailSettingsPage" />
+    </Section>
+
+    <Section label="Grammar">
+        <RadioGroup label="Grammar suggestions">
+            <Option value="Grammar suggestions on" />
+            <Option value="Grammar suggestions off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Spelling">
+        <RadioGroup label="Spelling suggestions">
+            <Option value="Spelling suggestions on" />
+            <Option value="Spelling suggestions off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Autocorrect">
+        <RadioGroup label="Autocorrect">
+            <Option value="Autocorrect on" />
+            <Option value="Autocorrect off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Smart Compose">
+        <RadioGroup label="Smart Compose suggestions">
+            <Option value="Writing suggestions on" />
+            <Option value="Writing suggestions off" />
+        </RadioGroup>
+        <Link label="Feedback on Smart Compose suggestions" to="SmartComposeFeedbackPage" />
+    </Section>
+
+    <Section label="Smart Compose personalization">
+        <RadioGroup label="Smart Compose personalization">
+            <Option value="Personalization on" />
+            <Option value="Personalization off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Conversation View">
+        <RadioGroup label="Threaded emails">
+            <Option value="Conversation view on" />
+            <Option value="Conversation view off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Nudges">
+        <CheckBox label="Suggest emails to reply to"
+            action="Suggests emails that need responses." />
+        <CheckBox label="Suggest emails to follow up on"
+            action="Suggests emails you might want to follow up on." />
+    </Section>
+
+    <Section label="Smart Reply">
+        <RadioGroup label="Smart Reply">
+            <Option value="Smart Reply on" />
+            <Option value="Smart Reply off" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Smart features and personalization">
+        <CheckBox label="Turn on smart features and personalization"
+            action="Enables smart features for email, chat, and video." />
+        <Link label="Learn more" to="SmartFeaturesLearnMorePage" />
+    </Section>
+
+    <Section label="Smart features and personalization in other Google products">
+        <CheckBox label="Turn on smart features and personalization in other Google products"
+            action="Gmail, Chat, and Meet may use my content to personalize my experience." />
+        <Link label="Learn more" to="SmartFeaturesLearnMorePage" />
+    </Section>
+
+    <Section label="Package tracking">
+        <CheckBox label="Turn on package tracking"
+            action="Google will share tracking numbers for packages with carriers." />
+    </Section>
+
+    <Section label="Desktop notifications">
+        <RadioGroup label="Desktop notifications">
+            <Option value="New mail notifications on" />
+            <Option value="Important mail notifications on" />
+            <Option value="Mail notifications off" />
+        </RadioGroup>
+        <Link label="Learn more" to="DesktopNotificationsLearnMorePage" />
+    </Section>
+
+    <Section label="Stars">
+        <Text
+            value="Drag the stars between the lists. The stars will rotate in order when you click them." />
+        <Text value="Presets:" />
+        <Option value="1 star" />
+        <Option value="4 stars" />
+        <Option value="All stars" />
+    </Section>
+
+    <Section label="Keyboard shortcuts">
+        <RadioGroup label="Keyboard shortcuts">
+            <Option value="Keyboard shortcuts off" />
+            <Option value="Keyboard shortcuts on" />
+        </RadioGroup>
+        <Link label="Learn more" to="KeyboardShortcutsLearnMorePage" />
+    </Section>
+
+    <Section label="Button labels">
+        <RadioGroup label="Button labels">
+            <Option value="Icons" />
+            <Option value="Text" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="My picture">
+        <Text value="Your Google profile picture is visible across Google services." />
+        <Link label="Change your picture in About me" to="GoogleAboutMePage" />
+    </Section>
+
+    <Section label="Create contacts for auto-complete">
+        <RadioGroup label="Create contacts for auto-complete">
+            <Option
+                value="When I send a message to a new person, add them to Other Contacts so that I can auto-complete to them next time" />
+            <Option value="I’ll add contacts myself" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Importance signals for ads">
+        <Link label="Learn more" to="AdImportanceLearnMorePage" />
+    </Section>
+
+    <Section label="Signature">
+        <Text value="Appended at the end of all outgoing messages." />
+        <Text value="No signatures" />
+        <Button label="Create new" />
+    </Section>
+
+    <Section label="Personal level indicators">
+        <RadioGroup label="Personal level indicators">
+            <Option value="No indicators" />
+            <Option value="Show indicators" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Snippets">
+        <RadioGroup label="Snippets">
+            <Option value="Show snippets" />
+            <Option value="No snippets" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Vacation responder">
+        <RadioGroup label="Vacation responder">
+            <Option value="Vacation responder off" />
+            <Option value="Vacation responder on" />
+        </RadioGroup>
+        <TextInput placeholder="First day" />
+        <TextInput placeholder="Last day (optional)" />
+        <TextInput placeholder="Subject" />
+        <TextInput placeholder="Type your vacation message here..." />
+        <CheckBox label="Only send a response to people in my Contacts" />
+    </Section>
+
+    <Button label="Save Changes" />
+    <Button label="Cancel" />
+
+</Page>

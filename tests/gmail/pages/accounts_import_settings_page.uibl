@@ -1,0 +1,54 @@
+<Page name="AccountsImportSettings" description="Manage your account credentials, mail import, send-as addresses, and mail delegation.">
+
+    <Section label="Change account settings">
+        <Link label="Change password" to="ChangePasswordPage" />
+        <Link label="Change password recovery options" to="ChangePasswordRecoveryPage" />
+        <Link label="Other Google Account settings" to="GoogleAccountSettingsPage" />
+        <Text
+            value="Using Gmail for work? Businesses get customized email with Google Workspace." />
+    </Section>
+
+    <Text value="Using Gmail for work? Businesses get yourname@example.com email, more storage, and admin tools with Google Workspace."/>
+    <Link label="Read more" to="https://workspace.google.com/intl/en/products/gmail/"/>
+
+    <Section label="Import mail and contacts">
+        <Link label="Learn more" to="ImportMailLearnMorePage" />
+        <Link label="Import mail and contacts" to="ImportMailAndContactsPage" />
+    </Section>
+
+    <Section label="Send mail as">
+        <Text value="Use Gmail to send from your other email addresses." />
+        <Text value="users email address" />
+        <Button label="Add another email address"
+            action="Opens a dialog to add a secondary email address" />
+        <Link label="Learn more" to="SendMailAsLearnMorePage" />
+    </Section>
+
+    <Section label="Check mail from other accounts">
+        <Link label="Learn more" to="CheckMailLearnMorePage" />
+        <Button label="Add a mail account"
+            action="Brings up wizard to check mail from another account" />
+    </Section>
+
+    <Section label="Grant access to your account">
+        <Link label="Learn more" to="GrantAccessLearnMorePage" />
+        <Button label="Add another account"
+            action="Adds a delegated user to read/send mail on your behalf" />
+
+        <RadioGroup label="Mark as read behavior">
+            <Option value="Mark conversation as read when opened by others" />
+            <Option value="Leave conversation unread when opened by others" />
+        </RadioGroup>
+
+        <RadioGroup label="Sender information">
+            <Option value="Show this address and the person who sent it (Sent by...)" />
+            <Option value="Show this address only (1413david@gmail.com)" />
+        </RadioGroup>
+    </Section>
+
+    <Section label="Add additional storage">
+        <Text value="You are currently using (user space usage in GB and in percentage) of your (user available capacity GB)." />
+        <Text value="Need more space?" />
+        <Link label="Purchase additional storage" to="https://drive.google.com/u/0/settings/storage?hl=en&utm_medium=web&utm_source=gmail&utm_campaign=add_additional_storage" />
+    </Section>
+</Page>
