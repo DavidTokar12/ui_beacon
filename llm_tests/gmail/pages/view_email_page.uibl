@@ -7,7 +7,7 @@
         <Nav
             label="Back to Inbox"
             icon="Left arrow icon"
-            to="Inbox"
+            to="InboxPage"
         />
         <Button
             label="Archive"

@@ -1,4 +1,4 @@
-<Page name="GeneralSettings"
+<Page name="GeneralSettingsPage"
     description="Configure language, email behavior, and personalization options.">
 
     <Section label="Language">
@@ -151,15 +151,6 @@
             <Option value="Mail notifications off" />
         </RadioGroup>
         <Link label="Learn more" to="DesktopNotificationsLearnMorePage" />
-    </Section>
-
-    <Section label="Stars">
-        <Text
-            value="Drag the stars between the lists. The stars will rotate in order when you click them." />
-        <Text value="Presets:" />
-        <Option value="1 star" />
-        <Option value="4 stars" />
-        <Option value="All stars" />
     </Section>
 
     <Section label="Keyboard shortcuts">

@@ -1,4 +1,4 @@
-<Page name="InboxSettings" description="Configure inbox layout, categories, reading pane, and importance markers.">
+<Page name="InboxSettingsPage" description="Configure inbox layout, categories, reading pane, and importance markers.">
 
     <Section label="Inbox type">
         <DropDown label="Select inbox type" action="Changes the inbox layout.">

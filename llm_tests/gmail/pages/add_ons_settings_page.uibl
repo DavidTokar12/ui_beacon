@@ -1,0 +1,12 @@
+<Page name="AddonsSettingsPage">
+
+    <List label="Installed add-ons:" description="A list of the names of the users installed add ons."/>
+    <Link label="Manage" to="Google Workspace Marketplace" />
+
+    <Text value="You can install developer add-ons from Apps Script. Developer add-ons are simply add-ons which haven't been published. If you're a developer, installing your developer add-on allows you to test it prior to publishing. Some add-ons are specific to a particular organization or user and thus aren't intended for wider publication; you can install these add-ons as developer add-ons."
+    description="`install developer add-ons` and `Apps script` are links."
+    />
+
+    <List label="Installed developer add-ons:" description="A list of the names of the users installed developer add ons."/>
+
+</Page>

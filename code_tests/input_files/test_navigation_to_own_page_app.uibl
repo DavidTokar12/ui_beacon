@@ -1,0 +1,7 @@
+<App name="test">
+
+    <Page name="testPage">
+        <Nav to="testPage" />
+    </Page>
+
+</App>

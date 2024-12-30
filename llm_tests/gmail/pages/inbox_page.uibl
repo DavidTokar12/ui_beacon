@@ -1,4 +1,4 @@
-<Page name="Inbox" description="Primary mailbox with new incoming messages">
+<Page name="InboxPage" description="Primary mailbox with new incoming messages">
 
     <DropDown action="Mass select or unselect emails">
         <Option value="All" />

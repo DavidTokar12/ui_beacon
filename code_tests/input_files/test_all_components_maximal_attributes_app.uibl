@@ -1,0 +1,238 @@
+<App name="MyApp" description="An example application">
+    <!-- Header (LayoutComponent) -->
+    <Header position="top" description="Header description" visibleWhen="showHeaderCondition">
+        
+        <!-- Section (extends BaseComponentAttributes) -->
+        <Section
+            name="sectionName"
+            label="sectionLabel"
+            icon="sectionIcon"
+            style="sectionStyle"
+            description="sectionDescription"
+            position="sectionPosition"
+            visibleWhen="sectionVisibleCondition"
+        >
+            <!-- Wrapper (extends BaseComponentAttributes + orientation) -->
+            <Wrapper
+                name="wrapperName"
+                label="wrapperLabel"
+                icon="wrapperIcon"
+                style="wrapperStyle"
+                description="wrapperDescription"
+                position="wrapperPosition"
+                visibleWhen="wrapperVisibleCondition"
+                orientation="horizontal"
+            >
+                <!-- Button (InteractiveComponentAttributes) -->
+                <Button
+                    name="buttonName"
+                    label="buttonLabel"
+                    icon="buttonIcon"
+                    style="buttonStyle"
+                    description="buttonDescription"
+                    position="buttonPosition"
+                    visibleWhen="buttonVisibleCondition"
+                    action="buttonAction"
+                />
+                
+                <!-- DropDown (InteractiveComponentAttributes) with Option -->
+                <DropDown
+                    name="dropDownName"
+                    label="dropDownLabel"
+                    icon="dropDownIcon"
+                    style="dropDownStyle"
+                    description="dropDownDescription"
+                    position="dropDownPosition"
+                    visibleWhen="dropDownVisibleCondition"
+                    action="dropDownAction"
+                >
+                    <Option
+                        name="optionName"
+                        label="optionLabel"
+                        icon="optionIcon"
+                        style="optionStyle"
+                        description="optionDescription"
+                        position="optionPosition"
+                        visibleWhen="optionVisibleCondition"
+                        action="optionAction"
+                        value="optionValue"
+                    />
+                </DropDown>
+                
+                <!-- RadioGroup (InteractiveComponentAttributes) with Option -->
+                <RadioGroup
+                    name="radioGroupName"
+                    label="radioGroupLabel"
+                    icon="radioGroupIcon"
+                    style="radioGroupStyle"
+                    description="radioGroupDescription"
+                    position="radioGroupPosition"
+                    visibleWhen="radioGroupVisibleCondition"
+                    action="radioGroupAction"
+                >
+                    <Option
+                        name="radioOptionName"
+                        label="radioOptionLabel"
+                        icon="radioOptionIcon"
+                        style="radioOptionStyle"
+                        description="radioOptionDescription"
+                        position="radioOptionPosition"
+                        visibleWhen="radioOptionVisibleCondition"
+                        action="radioOptionAction"
+                        value="radioOptionValue"
+                    />
+                </RadioGroup>
+                
+                <!-- TextInput (InteractiveComponentAttributes + placeholder) -->
+                <TextInput
+                    name="textInputName"
+                    label="textInputLabel"
+                    icon="textInputIcon"
+                    style="textInputStyle"
+                    description="textInputDescription"
+                    position="textInputPosition"
+                    visibleWhen="textInputVisibleCondition"
+                    action="textInputAction"
+                    placeholder="Enter text here"
+                />
+                
+                <!-- Form (InteractiveComponentAttributes) -->
+                <Form
+                    name="formName"
+                    label="formLabel"
+                    icon="formIcon"
+                    style="formStyle"
+                    description="formDescription"
+                    position="formPosition"
+                    visibleWhen="formVisibleCondition"
+                    action="formAction"
+                >
+                    <!-- Text (BaseComponentAttributes + required value) -->
+                    <Text
+                        name="textName"
+                        label="textLabel"
+                        icon="textIcon"
+                        style="textStyle"
+                        description="textDescription"
+                        position="textPosition"
+                        visibleWhen="textVisibleCondition"
+                        value="Hello World"
+                    />
+                    
+                    <!-- List (BaseComponentAttributes + optional orientation) -->
+                    <List
+                        name="listName"
+                        label="listLabel"
+                        icon="listIcon"
+                        style="listStyle"
+                        description="listDescription"
+                        position="listPosition"
+                        visibleWhen="listVisibleCondition"
+                        orientation="horizontal"
+                    >
+                        <!-- ListItem (extends BaseComponentAttributes) -->
+                        <ListItem
+                            name="listItemName"
+                            label="listItemLabel"
+                            icon="listItemIcon"
+                            style="listItemStyle"
+                            description="listItemDescription"
+                            position="listItemPosition"
+                            visibleWhen="listItemVisibleCondition"
+                        >
+                            <!-- CheckBox (InteractiveComponentAttributes) -->
+                            <CheckBox
+                                name="checkBoxName"
+                                label="checkBoxLabel"
+                                icon="checkBoxIcon"
+                                style="checkBoxStyle"
+                                description="checkBoxDescription"
+                                position="checkBoxPosition"
+                                visibleWhen="checkBoxVisibleCondition"
+                                action="checkBoxAction"
+                            />
+                        </ListItem>
+                    </List>
+
+                    <!-- DateSelector (InteractiveComponentAttributes) -->
+                    <DateSelector
+                        name="dateSelectorName"
+                        label="dateSelectorLabel"
+                        icon="dateSelectorIcon"
+                        style="dateSelectorStyle"
+                        description="dateSelectorDescription"
+                        position="dateSelectorPosition"
+                        visibleWhen="dateSelectorVisibleCondition"
+                        action="dateSelectorAction"
+                    />
+                </Form>
+                
+                <!-- Nav (BaseComponentAttributes + required 'to' attr) -->
+                <Nav
+                    name="navName"
+                    label="navLabel"
+                    icon="navIcon"
+                    style="navStyle"
+                    description="navDescription"
+                    position="navPosition"
+                    visibleWhen="navVisibleCondition"
+                    to="navigationDestination"
+                >
+                    <!-- Link (BaseComponentAttributes + required 'to' attr) -->
+                    <Link
+                        name="linkName"
+                        label="linkLabel"
+                        icon="linkIcon"
+                        style="linkStyle"
+                        description="linkDescription"
+                        position="linkPosition"
+                        visibleWhen="linkVisibleCondition"
+                        to="https://example.com"
+                    />
+                </Nav>
+                
+                <!-- Image (MediaComponent) -->
+                <Image
+                    position="imagePosition"
+                    description="imageDescription"
+                    visibleWhen="imageVisibleCondition"
+                    label="imageLabel"
+                    style="imageStyle"
+                    name="imageName"
+                />
+                
+                <!-- Video (MediaComponent) -->
+                <Video
+                    position="videoPosition"
+                    description="videoDescription"
+                    visibleWhen="videoVisibleCondition"
+                    label="videoLabel"
+                    style="videoStyle"
+                    name="videoName"
+                />
+            </Wrapper>
+        </Section>
+    </Header>
+    
+    <!-- SideBar (LayoutComponent) -->
+    <SideBar
+        position="sideBarPosition"
+        description="sideBarDescription"
+        visibleWhen="sideBarVisibleCondition"
+    />
+    
+    <!-- Page -->
+    <Page
+        name="Page"
+        description="pageDescription"
+    >
+        <!-- (Could include child elements here if desired) -->
+    </Page>
+    
+    <!-- Footer (LayoutComponent) -->
+    <Footer
+        position="bottom"
+        description="footerDescription"
+        visibleWhen="footerVisibleCondition"
+    />
+</App>

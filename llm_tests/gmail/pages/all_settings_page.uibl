@@ -1,0 +1,35 @@
+<Page name="AllSettingsPage"
+    description="Categorized emails. Same structure as Inbox.">
+        <Wrapper orientation="horizontal">
+            <Nav
+                to="GeneralSettingsPage"
+                label="General"
+            />
+            <Nav
+                to="LabelSettingsPage"
+                label="Labels"
+            />
+            <Nav
+                to="InboxSettingsPage"
+                label="Inbox"
+            />
+            <Nav
+                to="AccountsImportSettingsPage"
+                label="Accounts and Import"
+            />
+            <Nav
+                to="FiltersBlockedAddressesSettingsPage"
+                label="Filters and Blocked Addresses"
+            />
+            <Nav
+                to="ForwardingPopImapSettingsPage"
+                label="Forwarding and POP/IMAP"
+            />
+            <Nav
+                to="AddonsSettingsPage"
+                label="Add-ons"
+            />
+        </Wrapper>
+
+
+</Page>

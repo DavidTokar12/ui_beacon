@@ -1,4 +1,4 @@
-<Page name="AccountsImportSettings" description="Manage your account credentials, mail import, send-as addresses, and mail delegation.">
+<Page name="AccountsImportSettingsPage" description="Manage your account credentials, mail import, send-as addresses, and mail delegation.">
 
     <Section label="Change account settings">
         <Link label="Change password" to="ChangePasswordPage" />

@@ -1,5 +1,5 @@
 <Page
-    name="FiltersBlockedAddressesSettings"
+    name="FiltersBlockedAddressesSettingsPage"
     description="Manage your inbound mail filters, blocked senders, and spam-related settings."
 >
 
@@ -142,7 +142,7 @@
             />
             <Nav
                 label="Add forwarding address"
-                to="ForwardingPopImapSettings"
+                to="ForwardingPopImapSettingsPage"
             />
         </Wrapper>
 

@@ -1,0 +1,6 @@
+<App name="Test">
+
+    <SideBar position="test"></SideBar>
+    <Page name="TestPage"></Page>
+    <Footer position="test"></Footer>
+</App>

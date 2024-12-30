@@ -1,0 +1,15 @@
+<App name="UIBeacon example">
+    <Header position="top of the screen">
+        <Nav position="far left"  label="UIBeacon example" to="WelcomePage" />
+        <Nav position="far right" label="About" to="AboutPage" />
+        <Nav position="far right" label="Contact" to="ContactPage"/>
+    </Header>
+
+    <Page name="WelcomePage">
+        <Text value="UIBeacon test Website" position="centered"/>
+        <Button label="Solve world hunger" description="Uses quantum computing to find a solution for world hunger."/>
+    </Page>
+    
+    <IncludePage href="pages/contact_page.uibl" />
+    <IncludePage href="pages/about_page.uibl" />
+</App>

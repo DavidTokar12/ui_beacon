@@ -1,0 +1,7 @@
+<App name="Test">
+
+    <Header position="test"></Header>
+    <SideBar position="test"></SideBar>
+    <Page name="TestPage"></Page>
+    <Footer position="test"></Footer>
+</App>

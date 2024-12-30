@@ -1,0 +1,7 @@
+<App name="test">
+
+    <Page name="testPage">
+        <Nav to="none_existing_page" />
+    </Page>
+
+</App>

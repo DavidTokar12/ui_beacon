@@ -17,3 +17,6 @@ class StepPlannerResponse(BaseModel):
     action_completion_steps: list[str] = Field(
         description="The steps the user has to take to complete the action"
     )
+    functionality_explanation: str = Field(
+        description="An explanation of the functionality of the page for the user"
+    )

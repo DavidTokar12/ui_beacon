@@ -1,0 +1,4 @@
+<App name="Test">
+
+    <IncludePage href="pages/invalid_page.uibl" />
+</App>

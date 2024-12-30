@@ -1,0 +1,37 @@
+<App name="MyApp">
+    <Header position="top"/>
+    <SideBar position="left"/>
+    <Page name="HomePage">
+        <!-- Layout/Grouping -->
+        <Section/>
+        <Wrapper/>
+
+        <!-- Interactive -->
+        <Button/>
+        <DropDown>
+            <Option value="DropDownOption"/>
+        </DropDown>
+        <RadioGroup>
+            <Option value="RadioOption"/>
+        </RadioGroup>
+        <TextInput/>
+        <Form/>
+        <DateSelector/>
+        <CheckBox/>
+
+        <!-- Base/Text -->
+        <Text value="HelloWorld"/>
+
+        <!-- List -->
+        <List>
+            <ListItem/>
+        </List>
+
+        <Link to="https://example.com"/>
+
+        <!-- Media -->
+        <Image position="inline"/>
+        <Video position="inline"/>
+    </Page>
+    <Footer position="bottom"/>
+</App>

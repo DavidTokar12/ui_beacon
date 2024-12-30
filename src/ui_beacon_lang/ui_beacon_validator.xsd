@@ -1,150 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
 
-    <!-- Reusable complex type for base attributes -->
+    <!--
+      Reusable complex type for base attributes
+      (name, label, icon, style, description, position, visibleWhen)
+    -->
     <xs:complexType name="BaseComponentAttributes">
-        <xs:attribute name="description" type="xs:string" use="optional" />
-        <xs:attribute name="visibleWhen" type="xs:string" use="optional" />
-        <xs:attribute name="position" type="xs:string" use="optional" />
         <xs:attribute name="name" type="xs:string" use="optional" />
+        <xs:attribute name="label" type="xs:string" use="optional" />
+        <xs:attribute name="icon" type="xs:string" use="optional" />
+        <xs:attribute name="style" type="xs:string" use="optional" />
+        <xs:attribute name="description" type="xs:string" use="optional" />
+        <xs:attribute name="position" type="xs:string" use="optional" />
+        <xs:attribute name="visibleWhen" type="xs:string" use="optional" />
     </xs:complexType>
 
-    <!-- Reusable complex type for interactive components -->
+    <!--
+      Reusable complex type for interactive components
+      (inherits from BaseComponentAttributes + action)
+    -->
     <xs:complexType name="InteractiveComponentAttributes">
         <xs:complexContent>
             <xs:extension base="BaseComponentAttributes">
-                <xs:attribute name="label" type="xs:string" use="optional" />
                 <xs:attribute name="action" type="xs:string" use="optional" />
-                <xs:attribute name="icon" type="xs:string" use="optional" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
-    <!-- Group for all child elements except Page -->
+    <!-- Layout components: Header, SideBar, Footer
+         (they can contain child elements, must have position, etc.)
+    -->
+    <xs:complexType name="LayoutComponent">
+        <xs:sequence>
+            <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="position" type="xs:string" use="required" />
+        <xs:attribute name="description" type="xs:string" use="optional" />
+        <xs:attribute name="visibleWhen" type="xs:string" use="optional" />
+    </xs:complexType>
+
+    <!-- Media components: Image, Video
+         (they require position, can have optional description, visibleWhen, etc.)
+    -->
+    <xs:complexType name="MediaComponent">
+        <xs:attribute name="position" type="xs:string" use="optional" />
+        <xs:attribute name="description" type="xs:string" use="optional" />
+        <xs:attribute name="visibleWhen" type="xs:string" use="optional" />
+        <xs:attribute name="label" type="xs:string" use="optional" />
+        <xs:attribute name="style" type="xs:string" use="optional" />
+        <xs:attribute name="name" type="xs:string" use="optional" />
+    </xs:complexType>
+
+    <!--
+      Group of child elements that can appear inside Pages or inside other child elements.
+      This is referenced within layout components (Header, SideBar, Footer) or within Page.
+    -->
     <xs:group name="ChildElements">
         <xs:choice>
-            <xs:element ref="Option" />
-            <xs:element ref="DropDown" />
-            <xs:element ref="Button" />
-            <xs:element ref="List" />
-            <xs:element ref="Nav" />
-            <xs:element ref="CheckBox" />
-            <xs:element ref="Text" />
+            <!-- Wrapper components -->
             <xs:element ref="Section" />
-            <xs:element ref="Link" />
+            <xs:element ref="Wrapper" />
+
+            <!-- Base components -->
+            <xs:element ref="Text" />
+            <xs:element ref="List" />
+
+            <!-- Interactive components -->
+            <xs:element ref="Button" />
+            <xs:element ref="DropDown" />
             <xs:element ref="RadioGroup" />
             <xs:element ref="TextInput" />
-            <xs:element ref="Wrapper" />
             <xs:element ref="Form" />
             <xs:element ref="DateSelector" />
+            <xs:element ref="CheckBox" />
+
+            <!-- Navigation components -->
+            <xs:element ref="Nav" />
+            <xs:element ref="Link" />
+
+            <!-- Media components -->
+            <xs:element ref="Image" />
+            <xs:element ref="Video" />
         </xs:choice>
     </xs:group>
 
-    <!-- Text Element -->
-    <xs:element name="Text">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="BaseComponentAttributes">
-                    <xs:attribute name="value" type="xs:string" use="required" />
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
+    <!-- ========================== -->
+    <!--         ELEMENTS          -->
+    <!-- ========================== -->
 
-
-    <!-- DateSelector Element -->
-    <xs:element name="DateSelector">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-
-    <!-- Form Element -->
-    <xs:element name="Form">
+    <!-- Section Element -->
+    <xs:element name="Section">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="BaseComponentAttributes">
                     <xs:sequence>
                         <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
                     </xs:sequence>
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-
-    <!-- Option Element -->
-    <xs:element name="Option">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                    <xs:attribute name="value" type="xs:string" use="required" />
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- RadioGroup Element -->
-    <xs:element name="RadioGroup">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                    <xs:choice maxOccurs="unbounded">
-                        <xs:element ref="Option" minOccurs="0" />
-                        <xs:element ref="Nav" minOccurs="0" />
-                    </xs:choice>
-
-                    <xs:attribute name="text" type="xs:string" use="optional" />
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-
-    <!-- DropDown Element -->
-    <xs:element name="DropDown">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                    <xs:choice maxOccurs="unbounded">
-                        <xs:element ref="Option" minOccurs="0" />
-                        <xs:element ref="Nav" minOccurs="0" />
-                    </xs:choice>
-
-                </xs:extension>
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- Button Element -->
-    <xs:element name="Button">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes" />
-            </xs:complexContent>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- List Element -->
-    <xs:element name="List">
-        <xs:complexType>
-            <xs:complexContent>
-                <xs:extension base="BaseComponentAttributes">
-                    <xs:sequence>
-                        <xs:element ref="ListItem" minOccurs="0" maxOccurs="1" />
-                    </xs:sequence>
-                    <xs:attribute name="orientation" use="optional">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:enumeration value="horizontal" />
-                            </xs:restriction>
-                        </xs:simpleType>
-                    </xs:attribute>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
@@ -170,11 +122,57 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- ListItem Element -->
-    <xs:element name="ListItem">
+    <!-- Button Element -->
+    <xs:element name="Button">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="BaseComponentAttributes">
+                <xs:extension base="InteractiveComponentAttributes" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- DropDown Element (can have zero or more <Option> inside) -->
+    <xs:element name="DropDown">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InteractiveComponentAttributes">
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element ref="Option" minOccurs="0" />
+                    </xs:choice>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- RadioGroup Element (can have zero or more <Option> inside) -->
+    <xs:element name="RadioGroup">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InteractiveComponentAttributes">
+                    <xs:choice maxOccurs="unbounded">
+                        <xs:element ref="Option" minOccurs="0" />
+                    </xs:choice>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- TextInput Element (can have a 'placeholder' attribute) -->
+    <xs:element name="TextInput">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InteractiveComponentAttributes">
+                    <xs:attribute name="placeholder" type="xs:string" use="optional" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Form Element (can contain any child elements) -->
+    <xs:element name="Form">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InteractiveComponentAttributes">
                     <xs:sequence>
                         <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
                     </xs:sequence>
@@ -183,16 +181,11 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- Nav Element -->
-    <xs:element name="Nav">
+    <!-- DateSelector Element -->
+    <xs:element name="DateSelector">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                    <xs:sequence>
-                        <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
-                    </xs:sequence>
-                    <xs:attribute name="to" type="xs:string" use="required" />
-                </xs:extension>
+                <xs:extension base="InteractiveComponentAttributes" />
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
@@ -206,83 +199,150 @@
         </xs:complexType>
     </xs:element>
 
-    <!-- Section Element -->
-    <xs:element name="Section">
+    <!-- Text Element (must have a 'value' attribute) -->
+    <xs:element name="Text">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseComponentAttributes">
+                    <xs:attribute name="value" type="xs:string" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- List Element (can have zero or one <ListItem>) -->
+    <xs:element name="List">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseComponentAttributes">
+                    <xs:sequence>
+                        <xs:element ref="ListItem" minOccurs="0" maxOccurs="1" />
+                    </xs:sequence>
+                    <xs:attribute name="orientation" use="optional">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="horizontal" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Option Element (required 'value' attribute) -->
+    <xs:element name="Option">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InteractiveComponentAttributes">
+                    <xs:attribute name="value" type="xs:string" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- ListItem Element (can contain other child elements) -->
+    <xs:element name="ListItem">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="BaseComponentAttributes">
                     <xs:sequence>
                         <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
                     </xs:sequence>
-                    <xs:attribute name="label" type="xs:string" use="required" />
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
 
-    <!-- Link Element -->
-    <xs:element name="Link">
+    <!-- Nav Element (extends Base; has a required 'to' attribute) -->
+    <xs:element name="Nav">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
+                <xs:extension base="BaseComponentAttributes">
+                    <xs:sequence>
+                        <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
                     <xs:attribute name="to" type="xs:string" use="required" />
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
 
-    <!-- TextInput Element -->
-    <xs:element name="TextInput">
+    <!-- Link Element (extends Base; has a required 'to' attribute) -->
+    <xs:element name="Link">
         <xs:complexType>
             <xs:complexContent>
-                <xs:extension base="InteractiveComponentAttributes">
-                    <xs:attribute name="placeholder" type="xs:string" use="optional" />
+                <xs:extension base="BaseComponentAttributes">
+                    <xs:attribute name="to" type="xs:string" use="required" />
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
 
-    <!-- Header Element -->
+    <!-- Image Element (extends MediaComponent) -->
+    <xs:element name="Image">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="MediaComponent" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Video Element (extends MediaComponent) -->
+    <xs:element name="Video">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="MediaComponent" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Header Element (extends LayoutComponent) -->
     <xs:element name="Header">
         <xs:complexType>
-            <xs:sequence>
-                <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-            <xs:attribute name="position" type="xs:string" use="optional" />
-            <xs:attribute name="description" type="xs:string" use="optional" />
+            <xs:complexContent>
+                <xs:extension base="LayoutComponent" />
+            </xs:complexContent>
         </xs:complexType>
     </xs:element>
 
-    <!-- SideBar Element -->
+    <!-- SideBar Element (extends LayoutComponent) -->
     <xs:element name="SideBar">
         <xs:complexType>
-            <xs:sequence>
-                <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-            <xs:attribute name="position" type="xs:string" use="optional" />
-            <xs:attribute name="description" type="xs:string" use="optional" />
+            <xs:complexContent>
+                <xs:extension base="LayoutComponent" />
+            </xs:complexContent>
         </xs:complexType>
     </xs:element>
 
+    <!-- Footer Element (extends LayoutComponent) -->
+    <xs:element name="Footer">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="LayoutComponent" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
 
-    <!-- Page Element -->
+    <!-- Page Element: Must have 'name' attribute, optional 'description' -->
     <xs:element name="Page">
         <xs:complexType>
             <xs:sequence>
                 <xs:group ref="ChildElements" minOccurs="0" maxOccurs="unbounded" />
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="required" />
-            <xs:attribute name="description" type="xs:string" use="required" />
+            <xs:attribute name="description" type="xs:string" use="optional" />
         </xs:complexType>
     </xs:element>
 
-    <!-- Website Element -->
-    <xs:element name="Website">
+    <!-- App Element: Must have 'name' attribute, optional 'description' -->
+    <xs:element name="App">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="Header" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="SideBar" minOccurs="0" maxOccurs="1" />
-                <xs:element ref="Page" minOccurs="1" maxOccurs="unbounded" />
+                <xs:element ref="Page" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="Footer" minOccurs="0" maxOccurs="1" />
             </xs:sequence>
             <xs:attribute name="name" type="xs:string" use="required" />
             <xs:attribute name="description" type="xs:string" use="optional" />

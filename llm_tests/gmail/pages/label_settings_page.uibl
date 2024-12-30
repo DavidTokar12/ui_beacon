@@ -1,4 +1,4 @@
-<Page name="LabelSettings"
+<Page name="LabelSettingsPage"
     description="Manage system labels, categories, and user-created labels.">
 
     <Section label="System labels">

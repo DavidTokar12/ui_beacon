@@ -13,26 +13,28 @@ from tqdm import tqdm
 
 from ui_beacon import StepPlannerResponse
 from ui_beacon import create_system_prompts
+from ui_beacon_lang import UiBeaconLangParser
 
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Run AI tests for different suites.")
-    parser.add_argument(
+    argument_parser = argparse.ArgumentParser(
+        description="Run AI tests for different suites.")
+    argument_parser.add_argument(
         "suite", type=str, help="Test suite to run (e.g., gmail, outlook)."
     )
-    parser.add_argument(
+    argument_parser.add_argument(
         "--model", type=str, default="gpt-4o", help="Model to use for the tests."
     )
-    parser.add_argument(
+    argument_parser.add_argument(
         "--difficulty",
         type=str,
         choices=["easy", "medium", "hard"],
         help="Filter tests by difficulty.",
     )
-    parser.add_argument(
+    argument_parser.add_argument(
         "--ids", type=str, nargs="*", help="Specific test case IDs to run."
     )
-    return parser.parse_args()
+    return argument_parser.parse_args()
 
 
 def load_test_data(suite: str) -> dict:
@@ -52,6 +54,7 @@ def process_test_case(
     model,
 ):
     user_prompt = json.dumps(test_case)
+
     try:
         plan_completion = client.beta.chat.completions.parse(
             model=model,
@@ -102,10 +105,12 @@ def run_tests(suite: str, model: str, difficulty: str | None, ids: list[str] | N
     load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
     logging.info(f"Running tests for suite: {suite}, model: {model}")
 
-    ui_beacon_code_path = Path(__file__).parent / suite / "ui_beacon_code.xml"
+    ui_beacon_code_path = Path(__file__).parent / \
+        suite / f"{suite}_app.uibl"
 
     try:
-        prompts = create_system_prompts(ui_beacon_code_path=ui_beacon_code_path)
+        prompts = create_system_prompts(
+            ui_beacon_code_path=ui_beacon_code_path)
         planer_system_prompt = prompts["planner_prompt"]
         plan_to_response_converter_prompt = prompts["plan_to_response_converter_prompt"]
 

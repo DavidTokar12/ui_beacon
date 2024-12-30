@@ -1,0 +1,18 @@
+{
+    "easy": [
+        {
+            "id": "easy-0",
+            "current_page": "WelcomePage",
+            "users_question": "How does the Solve world hunger functionality work?",
+            "label": ""
+        },
+        {
+            "id": "easy-0",
+            "current_page": "WelcomePage",
+            "users_question": "How can I get to the about page?",
+            "label": ""
+        }
+    ],
+    "medium": [],
+    "hard": []
+}

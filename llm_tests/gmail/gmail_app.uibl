@@ -1,7 +1,6 @@
-<Website name="Gmail">
+<App name="Gmail">
 
-    <Header description="Global header, always visible" position="top of the screen">
-        
+    <Header position="top of the screen">
         <TextInput
             action="When a user types a query and presses Enter, the displayed email list filters to matching emails."
             placeholder="Search mail"
@@ -101,16 +100,17 @@
 
             <RadioGroup action="Determines the order in which emails are displayed in the inbox."
                 label="Inbox type">
-                <Option value="Default"/>
-                <Nav label="Customize" to="DefaultInboxCustomization" />                     
+                <Option value="Default"/>    
                 <Option value="Important first" />
                 <Option value="Unread first" />
                 <Option value="Starred first" />
                 <Option value="Priority Inbox"/>
-                <Nav label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Priority inbox'"/>
                 <Option value="Multiple Inboxes"/>
-                <Nav label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Multiple Inboxes'" />
             </RadioGroup>
+            <Nav position="Under the radio button with the label `Default`" label="Customize" to="DefaultInboxCustomization" />  
+            <Nav position="Under the radio button with the label `Priority Inbox`" label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Priority inbox'"/>
+            <Nav position="Under the radio button with the label `Multiple Inboxes`" label="Customize" to="InboxSettings" description="Goes to InboxSettings and sets the inbox type DropDown to 'Multiple Inboxes'" />
+
 
             <RadioGroup visibleWhen="Inbox type is not 'Multiple inboxes'" action="Configures the reading pane to change the layout of email previews."
                 label="Reading pane">
@@ -194,26 +194,26 @@
                 description="Labels created by the user. Clicking a label shows all emails with that label." />
     </SideBar>
 
-    <Page name="Drafts" description="Unsent emails. Same structure as Inbox." />
+    <Page name="DraftsPage" description="Unsent emails. Same structure as Inbox." />
 
-    <Page name="Starred" description="Starred messages. Same structure as Inbox." />
+    <Page name="StarredPage" description="Starred messages. Same structure as Inbox." />
 
-    <Page name="Snoozed" description="Snoozed messages. Same structure as Inbox." />
+    <Page name="SnoozedPage" description="Snoozed messages. Same structure as Inbox." />
 
-    <Page name="Sent" description="Outgoing messages. Same structure as Inbox." />
+    <Page name="SentPage" description="Outgoing messages. Same structure as Inbox." />
 
-    <Page name="Important" description="Important messages. Same structure as Inbox." />
+    <Page name="ImportantPage" description="Important messages. Same structure as Inbox." />
 
     <Page name="ThemePickerPage" description="A page where the user can select from a set of predefined themes or choose their own photos from the cloud to convert into a theme." />
 
-    <Page name="AllMail"
+    <Page name="AllMailPage"
         description="All emails, including archived. Same structure as Inbox." />
 
-    <Page name="Spam" description="Spam folder. Same structure as Inbox." />
+    <Page name="SpamPage" description="Spam folder. Same structure as Inbox." />
 
-    <Page name="Trash" description="Deleted messages. Same structure as Inbox." />
+    <Page name="TrashPage" description="Deleted messages. Same structure as Inbox." />
 
-    <Page name="Categories"
+    <Page name="CategoriesPage"
         description="Categorized emails. Same structure as Inbox." />
 
     <IncludePage href="pages/inbox_page.uibl" />
@@ -225,5 +225,6 @@
     <IncludePage href="pages/filters_and_blocked_addresses_settings_page.uibl" />
     <IncludePage href="pages/forwarding_pop_imap_settings_page.uibl" />
     <IncludePage href="pages/view_email_page.uibl" />
+    <IncludePage href="pages/add_ons_settings_page.uibl" />
 
-</Website>
+</App>
